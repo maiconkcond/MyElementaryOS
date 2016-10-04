@@ -46,6 +46,49 @@ sudo apt-get update
 sudo apt-get install sublime-text-installer -y
 ```
 
+* NodeJS
+```
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+sudo apt install npm
+```
+
+* Ruby Dependencies
+```
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+```
+
+* Ruby
+```
+cd
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+
+rbenv install 2.3.1
+rbenv global 2.3.1
+ruby -v
+```
+
+* Rails
+```
+gem install rails -v 4.2.6
+rails -v
+```
+
+* Android Studio
+```
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y && sudo apt-get update && sudo apt-get install ubuntu-make -y
+umake android
+sudo apt-get install android-tools-adb 
+```
+
 ###Softwares and Applications
 
 * Java 8
@@ -87,11 +130,20 @@ sudo sh -c 'echo "deb http://repo.steampowered.com/steam/ precise steam" >> /etc
 sudo apt-get update
 sudo apt-get install steam
 ```
+
 * Libre Office 4
 ```
 sudo add-apt-repository ppa:libreoffice/libreoffice-4-0
 sudo apt-get update
 sudo apt-get install libreoffice
+```
+
+* Spotify
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update
+sudo apt-get install spotify-client
 ```
 
 * Clementine Music Player
@@ -108,3 +160,5 @@ sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian precise c
 sudo apt-get update
 sudo apt-get install virtualbox-4.3
 ```
+
+
